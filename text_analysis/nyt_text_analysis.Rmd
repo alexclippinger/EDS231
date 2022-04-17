@@ -162,6 +162,8 @@ Still, we can clean the text data further to remove stop words such as "it" that
 clean_tokens <- str_replace_all(tokenized$word,"emission[a-z,A-Z]*","emission") #stem emissions
 clean_tokens <- str_remove_all(clean_tokens, "[:digit:]") #remove all numbers
 clean_tokens <- str_remove_all(clean_tokens, "[*]day") # remove days of the week
+
+
 clean_tokens <- gsub("’s", '', clean_tokens) # remove possessive
 
 tokenized$clean <- clean_tokens
